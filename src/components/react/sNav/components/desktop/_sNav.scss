@@ -1,0 +1,124 @@
+.sNav__desktop {
+    display: flex;
+    line-height: 17px;
+    @include setFont($body2-font);
+
+    &__item {
+        display: block;
+        cursor: pointer;
+        &__text {
+            padding: 0.5rem 0.75rem;
+            display: block;
+        }
+
+        &.active {
+            .sNav__desktop__item__text {
+                border-radius: 2rem;
+                background: $black-brand;
+                color: $white;
+            }
+
+            .sNav__sub {
+                display: block;
+            }
+        }
+    }
+}
+
+.sNav__sub {
+    background: $white;
+    overflow: hidden;
+    &__container {
+        min-height: 672px;
+    }
+    &__name {
+        @extend %h5-standard;
+    }
+
+    &__list {
+        &__sub__list__text {
+            @include underline-animation;
+
+            &,
+            &:hover {
+                cursor: pointer;
+                text-decoration: none;
+                color: $black;
+            }
+        }
+    }
+
+    &__item {
+        @extend %body-1;
+        max-height: 1.5rem;
+
+        &__icon {
+            opacity: 0;
+            transform: translateX(-0.5rem);
+        }
+
+        &.active {
+            .sNav__sub__item__text {
+                font-weight: 700;
+            }
+
+            .sNav__sub__item__icon {
+                opacity: 1;
+                transform: translateX(0);
+                transition: all 0.33s linear;
+            }
+        }
+    }
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 1.5rem;
+    }
+    &__category-wrapper {
+        display: flex;
+        justify-content: center;
+        border-left: 1px solid $gray-3;
+        box-sizing: border-box;
+        > a {
+            width: $productCategoryWidth;
+        }
+    }
+    &__category {
+        &,
+        &:hover {
+            cursor: pointer;
+            text-decoration: none;
+            color: $black;
+        }
+
+        &__aspect {
+            display: grid;
+            > * {
+                grid-area: 1/1;
+            }
+        }
+
+        &__image {
+            border-radius: 1.25rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            &:hover {
+                transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                background-size: 110%;
+            }
+        }
+
+        &__text,
+        &__text:hover {
+            @include setFont($body1-font);
+            font-weight: 700;
+        }
+
+        &__link {
+            @extend %body-2;
+            font-weight: 700;
+        }
+    }
+}

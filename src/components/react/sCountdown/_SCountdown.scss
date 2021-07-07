@@ -1,0 +1,50 @@
+.SCountdown {
+    &-wrapper {
+        justify-content: center;
+        padding: 1rem;
+        background-color: #ffb546;
+    }
+
+    &-item {
+        @extend %h4-standard;
+        height: 6.5rem;
+        width: 7.5rem;
+        justify-content: center;
+        padding-top: 0.8rem;
+        align-items: center;
+        border-radius: 20px;
+        background-color: black;
+        color: $white;
+
+        @include media-breakpoint-down(xs) {
+            font-size: 22px;
+            line-height: 30px;
+            padding-top: 0.4rem;
+            height: 3rem;
+            width: 4rem;
+            border-radius: 6px;
+        }
+
+        &-label {
+            @extend %body-2;
+            text-align: center;
+            padding: 0.5rem 0;
+            @include media-breakpoint-down(xs) {
+                font-size: 12px;
+            }
+        }
+    }
+
+    &-separator {
+        @extend %h2-standard;
+        padding: 0 1rem 2rem 1rem;
+        color: $black-brand;
+        align-self: center;
+
+        @include media-breakpoint-down(xs) {
+            padding: 0 0.5rem 1.8rem 0.5rem;
+            font-size: 30px;
+            line-height: 40px;
+        }
+    }
+}

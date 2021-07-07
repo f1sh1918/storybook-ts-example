@@ -1,0 +1,191 @@
+$font-size: "font-size";
+$line-height: "line-height";
+
+$body1-font: "body1";
+$body2-font: "body2";
+$body3-font: "body3";
+$body1-mobile-font: "body1-mobile";
+$body2-mobile-font: "body2-mobile";
+$body3-mobile-font: "body3-mobile";
+$h1-font: "h1";
+$h2-font: "h2";
+$h3-font: "h3";
+$h4-font: "h4";
+$h5-font: "h5";
+$h6-font: "h6";
+$h7-font: "h7";
+$h8-font: "h8";
+$h1-mobile-font: "h1-mobile";
+$h2-mobile-font: "h2-mobile";
+$h3-mobile-font: "h3-mobile";
+$h4-mobile-font: "h4-mobile";
+$h5-mobile-font: "h5-mobile";
+$h6-mobile-font: "h6-mobile";
+$h7-mobile-font: "h7-mobile";
+$h8-mobile-font: "h8-mobile";
+$sub-h1-font: "sub-h1";
+$sub-h2-font: "sub-h2";
+$sub-h3-font: "sub-h3";
+$sub-h4-font: "sub-h4";
+$sub-h1-mobile-font: "sub-h1-mobile";
+$sub-h2-mobile-font: "sub-h2-mobile";
+$sub-h3-mobile-font: "sub-h3-mobile";
+$sub-h4-mobile-font: "sub-h4-mobile";
+
+$font-definitions: (
+    $body1-font: (
+        $font-size: 18px,
+        $line-height: 24px,
+    ),
+    $body2-font: (
+        $font-size: 14px,
+        $line-height: 19px,
+    ),
+    $body3-font: (
+        $font-size: 12px,
+        $line-height: 16px,
+    ),
+    $body1-mobile-font: (
+        $font-size: 14px,
+        $line-height: 19px,
+    ),
+    $body2-mobile-font: (
+        $font-size: 12px,
+        $line-height: 16px,
+    ),
+    $body3-mobile-font: (
+        $font-size: 10px,
+        $line-height: 14px,
+    ),
+    $h1-font: (
+        $font-size: 80px,
+        $line-height: 96px,
+    ),
+    $h2-font: (
+        $font-size: 60px,
+        $line-height: 72px,
+    ),
+    $h3-font: (
+        $font-size: 48px,
+        $line-height: 58px,
+    ),
+    $h4-font: (
+        $font-size: 38px,
+        $line-height: 46px,
+    ),
+    $h5-font: (
+        $font-size: 32px,
+        $line-height: 39px,
+    ),
+    $h6-font: (
+        $font-size: 24px,
+        $line-height: 32px,
+    ),
+    $h7-font: (
+        $font-size: 22px,
+        $line-height: 30px,
+    ),
+    $h8-font: (
+        $font-size: 16px,
+        $line-height: 22px,
+    ),
+    $h1-mobile-font: (
+        $font-size: 44px,
+        $line-height: 53px,
+    ),
+    $h2-mobile-font: (
+        $font-size: 36px,
+        $line-height: 44px,
+    ),
+    $h3-mobile-font: (
+        $font-size: 30px,
+        $line-height: 40px,
+    ),
+    $h4-mobile-font: (
+        $font-size: 26px,
+        $line-height: 35px,
+    ),
+    $h5-mobile-font: (
+        $font-size: 22px,
+        $line-height: 30px,
+    ),
+    $h6-mobile-font: (
+        $font-size: 16px,
+        $line-height: 22px,
+    ),
+    $h7-mobile-font: (
+        $font-size: 15px,
+        $line-height: 20px,
+    ),
+    $h8-mobile-font: (
+        $font-size: 15px,
+        $line-height: 20px,
+    ),
+    $sub-h1-font: (
+        $font-size: 28px,
+        $line-height: 28px,
+    ),
+    $sub-h2-font: (
+        $font-size: 24px,
+        $line-height: 24px,
+    ),
+    $sub-h3-font: (
+        $font-size: 22px,
+        $line-height: 22px,
+    ),
+    $sub-h4-font: (
+        $font-size: 16px,
+        $line-height: 16px,
+    ),
+    $sub-h1-mobile-font: (
+        $font-size: 22px,
+        $line-height: 30px,
+    ),
+    $sub-h2-mobile-font: (
+        $font-size: 20px,
+        $line-height: 27px,
+    ),
+    $sub-h3-mobile-font: (
+        $font-size: 18px,
+        $line-height: 24px,
+    ),
+    $sub-h4-mobile-font: (
+        $font-size: 16px,
+        $line-height: 22px,
+    ),
+);
+
+@mixin setFont($font) {
+    $font-def: map-get($font-definitions, $font);
+    font-size: map-get($font-def, $font-size);
+    line-height: map-get($font-def, $line-height);
+}
+
+@mixin generateTypographyClasses {
+    @each $font-def-name, $font-def in $font-definitions {
+        .font-#{$font-def-name} {
+            @include setFont($font-def-name);
+        }
+    }
+}
+
+@include generateTypographyClasses();
+
+.family-one {
+    font-family: $font-family-copy;
+    &.thin {
+        font-weight: 400;
+    }
+    &.bold {
+        font-weight: 800;
+    }
+}
+.family-sharp {
+    font-family: $font-family-headline;
+    &.thin {
+        font-weight: 400;
+    }
+    &.bold {
+        font-weight: 800;
+    }
+}

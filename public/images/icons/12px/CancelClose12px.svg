@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+  <defs>
+    <path id="cancelclose12px-a" d="M9.89650911,1.39644661 L10.6036159,2.10355339 L6.70750911,6.00039661 L10.6033659,9.89614661 L9.89625911,10.6032534 L6.00050911,6.70739661 L2.10361589,10.6035534 L1.39650911,9.89644661 L5.29350911,6.00039661 L1.39650911,2.10350339 L2.10361589,1.39639661 L6.00050911,5.29339661 L9.89650911,1.39644661 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="cancelclose12px-b" fill="#fff">
+      <use xlink:href="#cancelclose12px-a"/>
+    </mask>
+    <use fill="#000" fill-rule="nonzero" xlink:href="#cancelclose12px-a"/>
+    <g fill="#000" mask="url(#cancelclose12px-b)">
+      <rect width="12" height="12"/>
+    </g>
+  </g>
+</svg>

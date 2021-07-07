@@ -1,0 +1,174 @@
+﻿nav {
+    border-bottom: 1px solid #dadada;
+    min-height: 65px;
+
+    .nav {
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .navbar-brand {
+        margin: 0;
+        padding: 0;
+        font-size: unset;
+    }
+
+    .nav-item {
+        margin: 0 0.75rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            color: $black-brand;
+
+            i {
+                -webkit-transition: 0.3s ease-in-out;
+                -moz-transition: 0.3s ease-in-out;
+                -o-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+
+        .nav-link {
+            position: relative;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: $body2-font-size-v2;
+            color: $black-brand;
+            padding: 0;
+            border: none;
+            -webkit-transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            -o-transition: 0.3s ease-in-out;
+            transition: 0.3s ease-in-out;
+
+            i {
+                position: absolute;
+                line-height: 1.25;
+                font-size: 16px;
+                display: inline-block;
+                -webkit-transition: 0.3s ease-in-out;
+                -moz-transition: 0.3s ease-in-out;
+                -o-transition: 0.3s ease-in-out;
+                transition: 0.3s ease-in-out;
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            &:hover {
+                color: $black-brand;
+
+                &::after {
+                    height: 4px;
+                    background-color: $black-brand;
+                    -webkit-transform: scaleX(1);
+                    -ms-transform: scaleX(1);
+                    transform: scaleX(1);
+                }
+            }
+
+            &::after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -21px;
+                z-index: 1;
+                height: 4px;
+                border: none;
+                margin: 0;
+                content: "";
+                background-color: #000;
+                -webkit-transform: scaleX(0);
+                -ms-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-transition: -webkit-transform 0.3s;
+                transition: -webkit-transform 0.3s;
+                transition: transform 0.3s;
+                transition: transform 0.3s, -webkit-transform 0.3s;
+            }
+        }
+
+        .dropdown-menu {
+            width: 100%;
+            background-clip: padding-box;
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+
+            .dropdown-menu__container {
+                flex-basis: 33%;
+
+                .dropdown-menu__subcategory {
+                    font-weight: bold;
+                    text-transform: uppercase;
+
+                    i {
+                        margin-left: 5px;
+                    }
+                }
+
+                .dropdown-menu__item {
+                    font-size: $body2-font-size-v2;
+                    padding-left: 0;
+                    padding-right: 0;
+
+                    .dropdown-menu__image {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &.show {
+            .nav-link {
+                i {
+                    -webkit-transition: 0.3s ease-in-out;
+                    -moz-transition: 0.3s ease-in-out;
+                    -o-transition: 0.3s ease-in-out;
+                    transition: 0.3s ease-in-out;
+                    -moz-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                }
+
+                &::after {
+                    position: absolute;
+                    left: 1px;
+                    right: 1px;
+                    bottom: -21px;
+                    z-index: 1;
+                    height: 4px;
+                    content: "";
+                    background-color: #000;
+                    -webkit-transform: scaleX(1);
+                    -ms-transform: scaleX(1);
+                    transform: scaleX(1);
+                    -webkit-transition: -webkit-transform 0.3s;
+                    transition: -webkit-transform 0.3s;
+                    transition: transform 0.3s;
+                    transition: transform 0.3s, -webkit-transform 0.3s;
+                }
+            }
+        }
+
+        .btn {
+            margin: 0;
+        }
+    }
+}

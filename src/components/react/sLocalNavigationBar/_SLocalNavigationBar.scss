@@ -1,0 +1,54 @@
+﻿.s-lnb {
+    &__top {
+        flex-wrap: wrap;
+
+        &__title {
+            @extend %h8-standard;
+            align-self: center;
+        }
+
+        &__panel {
+            &__left {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            &__right {
+                overflow: hidden;
+                flex-grow: 1;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+
+                &.bordered {
+                    border-top: 1px solid $gray-3;
+                }
+            }
+
+        }
+
+        @include media-breakpoint-down(md) {
+            @include setTypo($h6-mobile-font-size-v2, $h6-mobile-line-height-v2);
+        }
+    }
+
+    .dropdown-select {
+        &.v2 {
+
+            .MuiSelect-icon {
+                top: calc(50% - 14px);
+            }
+
+            .MuiInput-input {
+                line-height: $body3-mobile-line-height;
+            }
+        }
+    }
+
+    .s-navtab {
+        &-item {
+            &__link {
+                @extend .pb4;
+            }
+        }
+    }
+}

@@ -1,0 +1,139 @@
+// Style for textarea field v2
+.textarea.v2 {
+    .MuiTextField-root {
+        width: 100%;
+    }
+
+    // placeholder
+    label,
+    .MuiInputLabel-animated {
+        @extend %body-1;
+        color: $gray-6;
+        padding-left: 16px;
+        padding-top: 14px;
+
+        //when it is up
+        &.MuiInputLabel-shrink {
+            font-size: 14px;
+            padding-left: 0;
+            padding-top: 0;
+            transform: translate(0, 0) scale(1);
+        }
+
+        &.Mui-disabled {
+            color: $gray-3;
+        }
+
+        &.Mui-focused {
+            color: $primary-blue;
+        }
+
+        &.Mui-error {
+            color: $red-secondary;
+        }
+    }
+
+    // underline
+    div.MuiInput-underline {
+        margin-top: 26px;
+        border-radius: 6px;
+        border: 1px solid $gray-6;
+
+        textarea {
+            padding: 7px 16px;
+        }
+
+        &:before,
+        &:after {
+            content: none;
+        }
+
+        &.Mui-focused {
+            border-color: $primary-blue;
+            border-width: 2px;
+        }
+
+        &.Mui-disabled,
+        &.disabled {
+            border-color: $gray-3;
+        }
+
+        &.Mui-error {
+            border-color: $red-secondary;
+            border-width: 2px;
+        }
+    }
+
+    // hint message
+    p,
+    .MuiFormHelperText-root {
+        @extend %body-3;
+        color: $gray-6;
+
+        &.Mui-disabled,
+        &.disabled {
+            color: $gray-3;
+        }
+
+        &.Mui-error {
+            color: $red-secondary;
+        }
+    }
+
+    // textarea
+    textarea,
+    .MuiInputBase-input {
+        @extend %body-1;
+        color: $black-brand;
+
+        &.Mui-disabled,
+        &.disabled {
+            color: $gray-3;
+        }
+    }
+}
+
+// mobile view
+.textarea.v2 {
+    @media (max-width: 768px) {
+        // placeholder
+        label,
+        .MuiInputLabel-animated {
+            font-size: 14px;
+
+            &.MuiInputLabel-shrink {
+                font-size: 12px;
+            }
+        }
+
+        // textarea
+        textarea,
+        .MuiInputBase-input {
+            font-size: 14px;
+        }
+
+        // hint message
+        p,
+        .MuiFormHelperText-root {
+            font-size: 10px;
+        }
+    }
+}
+
+// helper styles just for dummy html
+.textarea.v2 {
+    textarea:first-of-type {
+        height: 96px;
+    }
+
+    textarea:nth-of-type(2) {
+        visibility: hidden;
+        position: absolute;
+        overflow: hidden;
+        height: 0px;
+        top: 0px;
+        left: 0px;
+        transform: translateZ(0px);
+        width: 193.75px;
+    }
+}

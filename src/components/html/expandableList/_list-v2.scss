@@ -1,0 +1,189 @@
+// Style for list element v2
+
+.accordion.v2,
+.product-categories-filter.v2 {
+    .card {
+        border: none;
+        border-radius: 0 !important;
+
+        .list-group-wrap {
+            padding: 0 !important;
+        }
+
+        i {
+            font-family: $font-family-icons;
+        }
+    }
+
+    // list header/ card header
+
+    .card-header {
+        @extend .justify-content-between;
+    }
+
+    .card-footer,
+    .card-header {
+        @extend .d-flex;
+        background-color: $white !important;
+        border-radius: 0;
+        border: none;
+        padding: 18px 24px 17px 24px !important;
+        position: relative;
+
+        &.icon-before > svg {
+            margin-right: 4px;
+        }
+
+        &.collapsed {
+            i {
+                color: $black-brand;
+
+                &:before {
+                    content: "\f078"; // .fa-chevron-down
+                    font-family: $font-family-icons;
+                }
+            }
+
+            &:after {
+                background-color: $gray-3;
+                bottom: 1px;
+                content: "";
+                height: 1px;
+                position: absolute;
+                width: calc(100% - 48px);
+            }
+        }
+
+        span {
+            @extend %body-2;
+            color: $black-brand;
+            font-size: 14px !important;
+            font-weight: 700;
+            text-transform: none !important;
+        }
+
+        i:not(.fa-plus):before {
+            content: "\f077"; // .fa-chevron-up
+            font-family: $font-family-icons;
+        }
+
+        // hover state
+        &:hover,
+        &.hover {
+            background-color: $gray-1 !important;
+
+            .svg-icon {
+                &.black {
+                    fill: $gray-8;
+                }
+            }
+
+            span,
+            i {
+                color: $gray-9;
+            }
+
+            &:after {
+                background-color: $gray-6;
+            }
+        }
+
+        // disabled
+        &:disabled,
+        &.disabled {
+            span,
+            i {
+                color: $gray-3;
+            }
+            .svg-icon {
+                &.black {
+                    fill: $gray-3;
+                }
+            }
+
+            &:after {
+                background-color: $gray-6;
+            }
+
+            &:hover {
+                span,
+                i {
+                    color: $gray-3;
+                }
+
+                &:after {
+                    background-color: $gray-6;
+                }
+            }
+        }
+    }
+
+    // + more
+    .card-footer {
+        padding-left: 28px !important;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        i {
+            margin-right: 11px;
+        }
+    }
+
+    // nested expandable item
+    .accordion.v2 .card-header {
+        padding: 16px 24px 15px 24px !important;
+
+        &:after {
+            content: none;
+        }
+    }
+
+    // list item - can be <a>,<div>.<button>...
+    .list-group .list-group-item {
+        @extend %body-2;
+        background-color: $white;
+        border: none;
+        border-radius: 0;
+        color: $black-brand;
+        padding: 16px 24px 15px 32px !important;
+        position: relative;
+
+        &.active {
+            font-weight: 700;
+            border: none;
+
+            &:hover .custom-control-label {
+                color: $black-brand;
+            }
+        }
+
+        &.disabled {
+            color: $gray-3;
+        }
+
+        &:hover,
+        &.hover {
+            background-color: $gray-1;
+            color: $gray-9;
+
+            .custom-control-label {
+                color: $gray-9;
+            }
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        //selectable one
+        .custom-checkbox {
+            padding-left: 22px;
+
+            .custom-control-label {
+                vertical-align: middle;
+            }
+        }
+    }
+}

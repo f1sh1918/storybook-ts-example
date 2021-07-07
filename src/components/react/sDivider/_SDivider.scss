@@ -1,0 +1,10 @@
+﻿.s-divider {
+    border-top: 1px solid $gray-3;
+
+    &.fullwidth {
+        width: 100vw;
+        margin-left: -50vw;
+        position: relative;
+        left: 50%;
+    }
+}

@@ -1,0 +1,18 @@
+/** This file is used for integrating base component style to other apps */
+/** Import Basics */
+@import "./styles/base";
+
+/** Import Prime Faces Styles*/
+@import "~primereact/resources/primereact.min.css";
+
+/** Import MUI */
+@import "./styles/mui-styles.scss";
+
+/** Import Bootstrap Override*/
+@import "./styles/grid-overrides.scss";
+
+/** Import Components */
+@import "./components/index";
+
+/** Import Samsung Spacings **/
+@import "./styles/spacings.scss";

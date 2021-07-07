@@ -1,0 +1,69 @@
+$slideTransition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+    -webkit-max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+$quickLinearTransition: all 0.1s;
+$maximumSupportedHeight: 100rem;
+
+.s-expandable {
+    background: $white;
+    &__item {
+        &__header {
+            @extend .py4;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+
+            &__icon {
+                @extend .mr3;
+                transform: rotate(90deg);
+            }
+        }
+
+        &:first-child {
+            border-top: none;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &--active {
+            border-top: 1px solid $gray-3;
+            border-bottom: 1px solid $gray-3;
+        }
+
+        &--active &__header,
+        &--inactive:hover &__header {
+            font-weight: 700;
+        }
+
+        &--active &__header__icon {
+            transform: rotate(-90deg);
+        }
+    }
+
+    // Animations
+    .slide-up-down {
+        &-enter {
+            opacity: 0;
+            max-height: 0;
+            transition: $slideTransition;
+            &-active {
+                opacity: 1;
+                max-height: $maximumSupportedHeight;
+                transition: $slideTransition;
+            }
+        }
+        &-exit {
+            opacity: 1;
+            max-height: $maximumSupportedHeight;
+            transition: $quickLinearTransition;
+            &-active {
+                opacity: 0;
+                max-height: 0;
+                transition: $slideTransition;
+            }
+        }
+    }
+}

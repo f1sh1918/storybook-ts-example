@@ -1,0 +1,79 @@
+.sNav__mobile {
+    width: 330px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: $white;
+    z-index: 2;
+    font-family: $font-family-copy;
+    height: 100vh;
+    overflow: hidden;
+
+    @media screen and (max-width: $sm) {
+        left: 0;
+        width: 100%;
+    }
+
+    .divider {
+        border-bottom: 1px solid $gray-3;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        height: 100%;
+
+        &__actions {
+            flex: 0 1 auto;
+        }
+
+        &__content {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            @extend .pb6;
+        }
+    }
+
+    &__nav {
+        list-style: none;
+        margin: 0;
+
+        &__name {
+            @extend %h5-standard;
+        }
+
+        &__item {
+            font-size: $h5-mobile-font-size-v2;
+            font-weight: 400;
+            cursor: pointer;
+
+            &__text {
+                &:hover {
+                    color: $black;
+                    font-weight: 700;
+                }
+            }
+
+            &__link {
+                @include underline-animation;
+                color: $black;
+                &:hover {
+                    text-decoration: none;
+                    color: $black;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    &__sub {
+        &__link,
+        &__link:hover {
+            cursor: pointer;
+            text-decoration: none;
+            color: $black;
+        }
+    }
+}

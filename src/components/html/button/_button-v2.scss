@@ -1,0 +1,324 @@
+// Style for buttons version 2
+
+%enabled-animation {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+%disabled-animation {
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+}
+
+.btn-v2 {
+    @extend %body-2;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 11px 1.5rem;
+    text-decoration: none;
+    white-space: nowrap;
+    line-height: 16px;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.icon-after svg {
+        margin-left: 4px;
+    }
+
+    &.icon-before svg {
+        margin-right: 4px;
+    }
+
+    &.disabled {
+        cursor: not-allowed;
+    }
+
+    i {
+        font-family: $font-family-icons;
+        font-style: normal;
+        font-weight: 400;
+        height: 16px;
+        width: 16px;
+    }
+
+    &.btn-underline-black {
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid rgb(0, 0, 0);
+        border-radius: 0;
+        color: $black-brand;
+        padding: 0;
+
+        &:hover,
+        &.hover {
+            border-color: $gray-8;
+            color: $gray-8;
+        }
+
+        &:disabled,
+        &.disabled {
+            border-color: $gray-3;
+            color: $gray-3;
+        }
+    }
+
+    &.btn-animated {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        color: $black-brand;
+        padding: 0;
+
+        .btn__text {
+            @extend %body-1;
+            @include underline-animation;
+        }
+    }
+
+    &.btn-underline-animated {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        color: $black-brand;
+        padding: 0;
+
+        .btn__text {
+            position: relative;
+            @extend %body-2;
+            font-weight: bold;
+            border-bottom: 3px solid $black-brand;
+
+            &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: -3px;
+                left: 0;
+                background-color: $black-brand;
+                @extend %disabled-animation;
+                -webkit-transition: $navButtonTransition;
+                transition: $navButtonTransition;
+            }
+
+            &:hover:before {
+                @extend %enabled-animation;
+            }
+
+            &:hover {
+                border: none;
+            }
+        }
+    }
+
+    &.btn-underline-white {
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid $white;
+        border-radius: 0;
+        color: $white;
+        padding: 0;
+
+        &:hover,
+        &.hover {
+            border-color: $gray-3;
+            color: $gray-3;
+        }
+
+        &:disabled,
+        &.disabled {
+            border-color: $gray-8;
+            color: $gray-8;
+        }
+    }
+
+    &.btn-label {
+        background-color: transparent;
+        border: none;
+        color: $black-brand;
+        padding: 0;
+
+        &:hover,
+        &.hover {
+            color: $gray-8;
+
+            .svg-icon {
+                &.black {
+                    fill: $gray-8;
+                }
+            }
+        }
+
+        &:disabled,
+        &.disabled {
+            color: $gray-3;
+
+            .svg-icon {
+                &.black {
+                    fill: $gray-3;
+                }
+            }
+        }
+
+        .svg-icon {
+            margin-top: -1px;
+        }
+    }
+
+    &.btn-transparent {
+        background-color: transparent;
+        border: 1px solid $black-brand;
+        color: $black-brand;
+
+        .svg-icon {
+            margin-top: -2px;
+        }
+
+        &:hover,
+        &.hover {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: $gray-8;
+            color: $gray-8;
+
+            .svg-icon {
+                &.black {
+                    fill: $gray-8;
+                }
+            }
+        }
+
+        &:disabled,
+        &.disabled {
+            border-color: $gray-3;
+            color: $gray-3;
+
+            .svg-icon {
+                &.black {
+                    fill: $gray-3;
+                }
+            }
+
+            &:hover {
+                background: transparent;
+            }
+        }
+
+        .svg-icon {
+            margin-top: -2px;
+        }
+    }
+
+    &.btn-black {
+        background-color: $black-brand;
+        border: 1px solid $black-brand;
+        color: $white;
+
+        &:hover,
+        &.hover {
+            background: $gray-8;
+            border-color: $gray-8;
+            color: $white;
+        }
+
+        &:disabled,
+        &.disabled {
+            background-color: $gray-3;
+            border-color: $gray-3;
+            color: $gray-5;
+
+            .svg-icon {
+                &.white {
+                    fill: $gray-5;
+                }
+            }
+
+            &:hover {
+                background-color: $gray-3;
+                border-color: $gray-3;
+            }
+        }
+
+        .svg-icon {
+            margin-top: -2px;
+        }
+    }
+
+    &.btn-blue {
+        background-color: $primary-blue;
+        border: 1px solid $primary-blue;
+        color: $white;
+
+        &:hover,
+        &.hover {
+            background: $primary-blue-light;
+            border-color: $primary-blue-light;
+        }
+
+        &:disabled,
+        &.disabled {
+            background-color: #ddedff;
+            border-color: #ddedff;
+            color: $gray-5;
+
+            &:hover {
+                background-color: #ddedff;
+                border-color: #ddedff;
+            }
+        }
+    }
+
+    &.btn-icon {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+
+        &.large {
+            padding: 0.5rem;
+        }
+
+        &.medium {
+            padding: 0.75rem;
+            line-height: 0.875rem;
+        }
+
+        &.small {
+            padding: 0.875rem;
+            line-height: 0.625rem;
+        }
+
+        &:hover,
+        &.hover {
+            background: $background-scrim-3;
+            color: $gray-8;
+
+            .svg-icon {
+                &.black {
+                    fill: $gray-8;
+                }
+            }
+        }
+
+        &:disabled,
+        &.disabled {
+            color: $gray-3;
+
+            .svg-icon {
+                &.black {
+                    fill: $gray-3;
+                }
+            }
+
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
+}

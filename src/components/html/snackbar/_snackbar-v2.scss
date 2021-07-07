@@ -1,0 +1,67 @@
+.Toastify__toast-container--bottom-center {
+    @extend .snackbar-v2;
+    padding: 0;
+}
+.Toastify__toast--default {
+    @extend .snackbar-v2;
+    padding: 0;
+}
+.Toastify__toast-body {
+    @extend .snack-info;
+}
+
+.snackbar-v2 {
+    background-color: $gray-9;
+    border-radius: $border-radius-small;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    width: 42.75rem;
+
+    @include media-breakpoint-down(sm) {
+        width: 19.5rem;
+    }
+}
+.snack-info {
+    font-size: $font-size-base-v2;
+    color: $white;
+    flex-grow: 100;
+    padding-left: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    line-height: $body3-line-height;
+
+    @include media-breakpoint-down(sm) {
+        font-size: $font-size-sm-v2;
+        flex-grow: 100;
+        width: 85%;
+        padding-left: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        line-height: $body3-mobile-line-height;
+
+        &.with-btn {
+            padding-bottom: 0.75rem;
+        }
+    }
+}
+
+.snack-btn {
+    flex-grow: 0;
+    padding: 1.25rem 1.5rem 1.25rem 2.5rem;
+
+    @include media-breakpoint-down(sm) {
+        font-size: $font-size-base-v2;
+        padding-left: 1rem;
+        padding-top: 0;
+        padding-bottom: 1rem;
+        line-height: $body1-mobile-line-height;
+    }
+
+    &.with-multiline-text {
+        @extend .snack-btn;
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 1.125rem;
+        }
+    }
+}

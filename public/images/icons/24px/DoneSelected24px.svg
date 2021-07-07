@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <polygon id="doneselected24px-a" points="21.183 5.808 22.067 6.692 10.11 18.633 1.933 10.467 2.817 9.583 10.11 16.866"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="doneselected24px-b" fill="#fff">
+      <use xlink:href="#doneselected24px-a"/>
+    </mask>
+    <use fill="#000" fill-rule="nonzero" xlink:href="#doneselected24px-a"/>
+    <g fill="#000" mask="url(#doneselected24px-b)">
+      <rect width="24" height="24"/>
+    </g>
+  </g>
+</svg>

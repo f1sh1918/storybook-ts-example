@@ -1,0 +1,444 @@
+.p-datatable {
+    position: relative;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .p-sortable-column {
+        cursor: pointer;
+        user-select: none;
+
+        .p-column-title {
+            vertical-align: middle;
+        }
+
+        .p-sortable-column-icon {
+            vertical-align: middle;
+        }
+
+        .p-sortable-column-badge {
+            vertical-align: middle;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .p-column-resizer {
+        display: block;
+        position: absolute !important;
+        top: 0;
+        right: 0;
+        margin: 0;
+        width: 0.5rem;
+        height: 100%;
+        padding: 0px;
+        cursor: col-resize;
+        border: 1px solid transparent;
+    }
+
+    .p-column-resizer-helper {
+        width: 1px;
+        position: absolute;
+        z-index: 10;
+        display: none;
+    }
+
+    .p-row-editor-init {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .p-row-editor-save {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .p-row-editor-cancel {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .p-row-toggler {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .p-datatable-loading-overlay {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+}
+
+.p-datatable-auto-layout {
+    > .p-datatable-wrapper {
+        overflow-x: auto;
+
+        > table {
+            table-layout: auto;
+        }
+    }
+}
+
+.p-datatable-hoverable-rows {
+    .p-selectable-row {
+        cursor: pointer;
+    }
+}
+
+.p-datatable-scrollable-wrapper {
+    position: relative;
+}
+
+.p-datatable-scrollable-header {
+    overflow: hidden;
+}
+
+.p-datatable-scrollable-footer {
+    overflow: hidden;
+}
+
+.p-datatable-scrollable-body {
+    overflow: auto;
+    position: relative;
+
+    > table {
+        > .p-datatable-tbody {
+            > tr {
+                &:first-child {
+                    > td {
+                        border-top: 0 none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.p-datatable-virtual-table {
+    position: absolute;
+}
+
+.p-datatable-frozen-view {
+    .p-datatable-scrollable-body {
+        overflow: hidden;
+    }
+
+    > .p-datatable-scrollable-body {
+        > table {
+            > .p-datatable-tbody {
+                > tr {
+                    > td {
+                        &:last-child {
+                            border-right: 0 none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.p-datatable-unfrozen-view {
+    position: absolute;
+    top: 0;
+}
+
+.p-datatable-flex-scrollable {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+
+    .p-datatable-scrollable-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 100%;
+    }
+
+    .p-datatable-scrollable-view {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 100%;
+    }
+
+    .p-datatable-scrollable-body {
+        flex: 1;
+    }
+}
+
+.p-datatable-resizable {
+    > .p-datatable-wrapper {
+        overflow-x: auto;
+    }
+
+    .p-datatable-thead {
+        > tr {
+            > th {
+                overflow: hidden;
+
+                .p-column-title {
+                }
+            }
+        }
+    }
+
+    .p-datatable-tfoot {
+        > tr {
+            > td {
+                overflow: hidden;
+            }
+        }
+    }
+
+    .p-datatable-tbody {
+        > tr {
+            > td {
+                overflow: hidden;
+            }
+        }
+    }
+
+    .p-resizable-column {
+        background-clip: padding-box;
+        position: relative;
+    }
+}
+
+.p-datatable-resizable-fit {
+    .p-resizable-column {
+        &:last-child {
+            .p-column-resizer {
+                display: none;
+            }
+        }
+    }
+}
+
+.p-datatable-reorder-indicator-up {
+    position: absolute;
+    display: none;
+}
+
+.p-datatable-reorder-indicator-down {
+    position: absolute;
+    display: none;
+}
+
+// DataTable Responsive
+
+.datatable-responsive {
+    .card {
+        border: none;
+    }
+
+    .p-datatable-responsive {
+        @include media-breakpoint-down(md) {
+            background-color: $gray-1;
+            padding: 1rem 1.5rem;
+            tr {
+                border: none;
+            }
+        }
+
+        .p-datatable-thead {
+            > tr {
+                border-top: 1px solid rgba(0, 0, 0, 0.125);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+                &:first-child {
+                    border-top: none;
+                }
+
+                .p-filter-column {
+                    background-color: $white;
+
+                    .p-dropdown {
+                        .pi-chevron-down {
+                            &:before {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+
+                .p-filter-column {
+                    padding: 1rem 1.25rem 1rem 0.25rem;
+
+                    &:first-child {
+                        padding-left: 1.5rem;
+                    }
+                }
+
+                > th {
+
+                    &:first-child {
+                        padding-left: 30px;
+                    }
+
+                    &:last-child {
+                        padding-right: 30px;
+                    }
+
+                    .p-column-title {
+                        @extend %body-3;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .p-datatable-tbody {
+            > tr {
+                border-top: 1px solid rgba(0, 0, 0, 0.125);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+                > td {
+                    @extend %body-3;
+                    padding: 2rem 12px;
+
+                    &:first-child {
+                        padding-left: 30px;
+                    }
+
+                    &:last-child {
+                        padding-right: 30px;
+                    }
+
+                    .p-column-title {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    table {
+        border-collapse: separate !important;
+        border-spacing: 0 15px !important;
+    }
+
+    .datatable-responsive {
+        .p-datatable.p-datatable-responsive {
+            .p-datatable-thead {
+                display: none !important;
+            }
+
+            .p-datatable-tfoot {
+                > tr {
+                    > td {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .datatable-responsive {
+        .p-datatable.p-datatable-responsive {
+            .p-datatable-tbody {
+                > tr {
+                    border-radius: $border-radius-small;
+                    border: 1px solid rgba(0, 0, 0, 0.125);
+                    padding-top: 0.5rem;
+                    padding-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .datatable-responsive {
+        .p-datatable.p-datatable-responsive {
+            .p-datatable-tbody {
+                > tr {
+                    > td {
+                        text-align: left;
+                        display: block;
+                        width: 100%;
+                        float: left;
+                        clear: left;
+                        padding: 0.5rem 1rem;
+                        font-size: $body1-mobile-font-size-v2;
+                        line-height: $body1-mobile-line-height;
+
+                        .p-column-title {
+                            min-width: 100% !important;
+                            display: block;
+                            font-size: $body3-mobile-font-size-v2;
+                            font-weight: bold;
+                            line-height: $body3-mobile-line-height;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .datatable-responsive {
+        .p-datatable.p-datatable-responsive {
+            .p-datatable-tbody {
+                > tr {
+                    > td {
+                        .p-column-title {
+                            padding: 0.4rem;
+                            min-width: 30%;
+                            display: inline-block;
+                            margin: -0.4em 1em -0.4em -0.4rem;
+                            font-weight: bold;
+                        }
+
+                        &:last-child {
+                            border-bottom: 1px solid var(--surface-d);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) and (min-width: 576px) {
+    .p-datatable-tbody {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .p-datatable-tbody {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1.5rem;
+    }
+}
+
+// test
+.datatable-responsive {
+    &.container {
+        max-width: 1440px !important;
+    }
+}
+

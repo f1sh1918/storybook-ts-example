@@ -1,0 +1,186 @@
+﻿// basic color
+$white: #ffffff;
+$black-brand: #000000;
+
+// primary color
+$primary-blue: #2189ff;
+$primary-blue-dark: #006ff2;
+$primary-blue-light: #68aeff;
+
+// secondary color
+$red-secondary: #ef3434;
+$orange-secondary: #f66700;
+$blue-secondary: #00b3e3;
+$green-secondary: #00838f;
+
+// netural colors
+$pink-netural: #f6f0f5;
+$orange-netural: #fef6f3;
+$blue-netural: #f5f7fe;
+$beige-netural: #f7f5f2;
+
+// grayscale
+$gray-1: #f7f7f7;
+$gray-2: #eeeeee;
+$gray-3: #dddddd;
+$gray-4: #bbbbbb;
+$gray-5: #aaaaaa;
+$gray-6: #8f8f8f;
+$gray-7: #757575;
+$gray-8: #555555;
+$gray-9: #313131;
+$gray-10: #1c1c1c;
+$gray-11: rgba(0, 0, 0, 0.15);
+
+$blue-hyperlink: #007bff;
+$blue-hyperlink-hover: #0056b3;
+
+@font-face {
+    font-family: "SamsungSharpSans";
+    src: url("fonts/SamsungSharpSans-Bold.eot");
+    src: url("fonts/SamsungSharpSans-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/SamsungSharpSans-Bold.woff") format("woff");
+    font-weight: 800;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "SamsungOne";
+    src: url("fonts/SamsungOneLatinCompact-400.eot"), url("fonts/SamsungOneLatinCompact-400.woff") format("woff"),
+    url("fonts/SamsungOne-400_v1.0.ttf") format("truetype"), url("fonts/SamsungOneLatinCompact-400.svg") format("svg");
+    font-weight: 400;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "SamsungOne 700";
+    src: url("fonts/SamsungOne-700.woff2") format("woff2"), url("fonts/SamsungOne-700.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    src: url("fonts/fa-solid-900.eot");
+    src: url("fonts/fa-solid-900.eot#iefix&v=4.0.3") format("embedded-opentype"), url("fonts/fa-solid-900.woff") format("woff"),
+    url("fonts/fa-solid-900.ttf") format("truetype"), url("fonts/fa-solid-900.svg") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+$font-family-copy: "SamsungOne", sans-serif;
+$font-family-copy-700: "SamsungOne 700", sans-serif;
+$font-family-headline: "SamsungSharpSans", sans-serif;
+$font-family-icons: "FontAwesome";
+
+// TODO remove after replacement with body font-size
+$font-size-base-v2: 14px;
+$font-size-lg-v2: 18px;
+$font-size-sm-v2: 12px;
+$font-size-xs-v2: 10px;
+
+// body font-size
+$body1-font-size-v2: 18px;
+$body2-font-size-v2: 14px;
+$body3-font-size-v2: 12px;
+
+$body1-mobile-font-size-v2: 14px;
+$body2-mobile-font-size-v2: 12px;
+$body3-mobile-font-size-v2: 10px;
+
+// body line-heights
+$body1-line-height: 24px;
+$body2-line-height: 19px;
+$body3-line-height: 16px;
+
+$body1-mobile-line-height: 19px;
+$body2-mobile-line-height: 16px;
+$body3-mobile-line-height: 14px;
+
+// Headline Font-Sizes
+$h1-font-size-v2: 80px;
+$h2-font-size-v2: 60px;
+$h3-font-size-v2: 48px;
+$h4-font-size-v2: 38px;
+$h5-font-size-v2: 32px;
+$h6-font-size-v2: 24px;
+$h7-font-size-v2: 22px;
+$h8-font-size-v2: 16px;
+
+$h1-mobile-font-size-v2: 44px;
+$h2-mobile-font-size-v2: 36px;
+$h3-mobile-font-size-v2: 30px;
+$h4-mobile-font-size-v2: 26px;
+$h5-mobile-font-size-v2: 22px;
+$h6-mobile-font-size-v2: 16px;
+$h7-mobile-font-size-v2: 15px;
+$h8-mobile-font-size-v2: 15px;
+
+//Headline Line-Heights
+
+$h1-line-height-v2: 96px;
+$h2-line-height-v2: 72px;
+$h3-line-height-v2: 58px;
+$h4-line-height-v2: 46px;
+$h5-line-height-v2: 39px;
+$h6-line-height-v2: 32px;
+$h7-line-height-v2: 30px;
+$h8-line-height-v2: 22px;
+
+$h1-mobile-line-height-v2: 53px;
+$h2-mobile-line-height-v2: 44px;
+$h3-mobile-line-height-v2: 40px;
+$h4-mobile-line-height-v2: 35px;
+$h5-mobile-line-height-v2: 30px;
+$h6-mobile-line-height-v2: 22px;
+$h7-mobile-line-height-v2: 20px;
+$h8-mobile-line-height-v2: 20px;
+
+//Subheadline Font-Sizes
+
+$sub-h1-font-size-v2: 28px;
+$sub-h2-font-size-v2: 24px;
+$sub-h3-font-size-v2: 22px;
+$sub-h4-font-size-v2: 16px;
+
+$sub-h1-mobile-font-size-v2: 22px;
+$sub-h2-mobile-font-size-v2: 20px;
+$sub-h3-mobile-font-size-v2: 18px;
+$sub-h4-mobile-font-size-v2: 16px;
+
+//Subheadline Line-Heights
+
+$sub-h1-line-height-v2: 28px;
+$sub-h2-line-height-v2: 24px;
+$sub-h3-line-height-v2: 22px;
+$sub-h4-line-height-v2: 16px;
+
+$sub-h1-mobile-line-height-v2: 30px;
+$sub-h2-mobile-line-height-v2: 27px;
+$sub-h3-mobile-line-height-v2: 24px;
+$sub-h4-mobile-line-height-v2: 22px;
+
+$border-radius-small: 6px;
+$border-radius-medium: 16px;
+$border-radius-big: 20px;
+$border-radius-bigger: 30px;
+
+$background-scrim-1: rgba(0, 0, 0, 0.6);
+$background-scrim-2: rgba(0, 0, 0, 0.9);
+$background-scrim-3: rgba(0, 0, 0, 0.05);
+$background-scrim-4: rgba(0, 0, 0, 0.3);
+$background-scrim-5: rgba(255, 255, 255, 0.3);
+$background-scrim-6: rgba(0, 0, 0, 0.4);
+$background-scrim-7: rgba(0, 0, 0, 0.1);
+$background-scrim-8: rgba(0, 0, 0, 0.2);
+
+$box-shadow-1: 0px 1px 3px 0px $background-scrim-8;
+$box-shadow-2: 0px 4px 10px -2px $background-scrim-8;
+$box-shadow-3: 0 0.5rem 0.5rem -0.5rem $background-scrim-8, 0 0.5rem 1rem 0 $background-scrim-3;
+
+$input-field-height: 3rem;

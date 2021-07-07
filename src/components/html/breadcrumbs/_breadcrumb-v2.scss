@@ -1,0 +1,36 @@
+.breadcrumb-v2 {
+    &-section {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+        padding-inline-start: 0;
+    }
+
+    &-seperator {
+        margin-top: -1px;
+        padding: 0 4px;
+    }
+
+    &-item {
+        list-style: none;
+        display: flex;
+        white-space: nowrap;
+        @extend %body-2;
+        height: 19px;
+        padding: 2.5px 0;
+
+        &.active {
+            color: $gray-6;
+        }
+
+        a {
+            color: $black-brand;
+            white-space: nowrap;
+
+            &:hover {
+                color: $black-brand;
+                text-decoration: underline;
+            }
+        }
+    }
+}

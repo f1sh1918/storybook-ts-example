@@ -1,0 +1,183 @@
+// headlines
+
+@mixin setTypo($font-size, $line-height) {
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+%headline-base {
+    font-family: $font-family-headline;
+    font-weight: bold;
+}
+
+%h1-standard {
+    @extend %headline-base;
+    @include setTypo($h1-font-size-v2, $h1-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($h1-mobile-font-size-v2, $h1-mobile-line-height-v2);
+    }
+}
+
+%h2-standard {
+    @extend %headline-base;
+    @include setTypo($h2-font-size-v2, $h2-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($h2-mobile-font-size-v2, $h2-mobile-line-height-v2);
+    }
+}
+
+%h3-standard {
+    @extend %headline-base;
+    @include setTypo($h3-font-size-v2, $h3-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($h3-mobile-font-size-v2, $h3-mobile-line-height-v2);
+    }
+}
+
+%h4-standard {
+    @extend %headline-base;
+    @include setTypo($h4-font-size-v2, $h4-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($h4-mobile-font-size-v2, $h4-mobile-line-height-v2);
+    }
+}
+
+%h5-standard {
+    @extend %headline-base;
+    @include setTypo($h5-font-size-v2, $h5-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($h5-mobile-font-size-v2, $h5-mobile-line-height-v2);
+    }
+}
+
+%h6-standard {
+    @extend %headline-base;
+    @include setTypo($h6-font-size-v2, $h6-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($h6-mobile-font-size-v2, $h6-mobile-line-height-v2);
+    }
+}
+
+%h7-standard {
+    @extend %headline-base;
+    @include setTypo($h7-font-size-v2, $h7-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($h7-mobile-font-size-v2, $h7-mobile-line-height-v2);
+    }
+}
+
+%h8-standard {
+    @extend %headline-base;
+    @include setTypo($h8-font-size-v2, $h8-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($h8-mobile-font-size-v2, $h8-mobile-line-height-v2);
+    }
+}
+
+%sub-headline-base {
+    font-family: $font-family-copy;
+    font-weight: 700;
+}
+
+%subheadline-1 {
+    @extend %sub-headline-base;
+    @include setTypo($sub-h1-font-size-v2, $sub-h1-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($sub-h1-mobile-font-size-v2, $sub-h1-mobile-line-height-v2);
+    }
+}
+
+%subheadline-2 {
+    @extend %sub-headline-base;
+    @include setTypo($sub-h2-font-size-v2, $sub-h2-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($sub-h2-mobile-font-size-v2, $sub-h2-mobile-line-height-v2);
+    }
+}
+
+%subheadline-3 {
+    @extend %sub-headline-base;
+    @include setTypo($sub-h3-font-size-v2, $sub-h3-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($sub-h3-mobile-font-size-v2, $sub-h3-mobile-line-height-v2);
+    }
+}
+
+%subheadline-4 {
+    @extend %sub-headline-base;
+    @include setTypo($sub-h4-font-size-v2, $sub-h4-line-height-v2);
+    @media (max-width: 768px) {
+        @include setTypo($sub-h4-mobile-font-size-v2, $sub-h4-mobile-line-height-v2);
+    }
+}
+
+%body-base {
+    font-family: $font-family-copy;
+    font-weight: 400;
+}
+
+%body-1 {
+    @extend %body-base;
+    @include setTypo($body1-font-size-v2, $body1-line-height);
+    @media (max-width: 768px) {
+        @include setTypo($body1-mobile-font-size-v2, $body1-mobile-line-height);
+    }
+}
+
+%body-2 {
+    @extend %body-base;
+    @include setTypo($body2-font-size-v2, $body2-line-height);
+    @media (max-width: 768px) {
+        @include setTypo($body2-mobile-font-size-v2, $body2-mobile-line-height);
+    }
+}
+
+%body-3 {
+    @extend %body-base;
+    @include setTypo($body3-font-size-v2, $body3-line-height);
+    @media (max-width: 768px) {
+        @include setTypo($body3-mobile-font-size-v2, $body3-mobile-line-height);
+    }
+}
+
+h1,
+.h1 {
+    @extend %h1-standard;
+}
+
+h2,
+.h2 {
+    @extend %h2-standard;
+}
+
+h3,
+.h3 {
+    @extend %h3-standard;
+}
+
+h4,
+.h4 {
+    @extend %h4-standard;
+}
+
+h5,
+.h5 {
+    @extend %h5-standard;
+}
+
+h6,
+.h6 {
+    @extend %h6-standard;
+}
+
+.h7 {
+    @extend %h7-standard;
+}
+
+.h8 {
+    @extend %h8-standard;
+}
+
+html {
+    font-size: 16px;
+}

@@ -1,0 +1,21 @@
+.SDropdownFilter {
+    .p-dropdown {
+        height: $input-field-height;
+        border-radius: $border-radius-bigger;
+
+        &-label {
+            display: inline-block;
+            align-self: center;
+        }
+    }
+
+    .p-dropdown-clear-icon {
+        font-size: 16px;
+    }
+
+    &-item-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+}

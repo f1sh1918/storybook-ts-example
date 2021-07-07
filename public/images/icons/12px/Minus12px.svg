@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+  <defs>
+    <polygon id="minus12px-a" points="11 5.5 11 6.5 1 6.5 1 5.5"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="minus12px-b" fill="#fff">
+      <use xlink:href="#minus12px-a"/>
+    </mask>
+    <use fill="#000" fill-rule="nonzero" xlink:href="#minus12px-a"/>
+    <g fill="#000" mask="url(#minus12px-b)">
+      <rect width="12" height="12"/>
+    </g>
+  </g>
+</svg>

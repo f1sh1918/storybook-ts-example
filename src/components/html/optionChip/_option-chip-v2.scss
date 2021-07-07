@@ -1,0 +1,124 @@
+// Style for option chip color and option chip label version 2
+.option-chip-color.custom-control.v2 {
+    .custom-control-label {
+        &:before {
+            border: 3px solid $white;
+            background-color: $primary-blue;
+            border-radius: 20px;
+            box-shadow: none;
+            left: -27px;
+            transform: translate3d(0, -50%, 0);
+            transition: none;
+            top: 9px;
+            height: 24px;
+            width: 24px;
+        }
+    }
+
+    .custom-control-input {
+        height: 20px;
+        width: 20px;
+
+        &:not(:checked) {
+            &:focus {
+                & ~ .custom-control-label:before {
+                    border-color: $primary-blue !important;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    &:hover,
+    &.hover,
+    .custom-control-input:checked {
+        & ~ .custom-control-label,
+        .custom-control-label {
+            &:before {
+                border-color: $black-brand !important;
+                box-shadow: none;
+            }
+
+            &:after {
+                background-image: none !important;
+                border: 2px solid white;
+                border-radius: 20px;
+                height: 22px;
+                left: -26px;
+                width: 22px;
+                top: 9px;
+                transform: translate3d(0, -50%, 0);
+            }
+        }
+    }
+
+    &:hover.custom-control-input[disabled],
+    &:hover.custom-control-input:disabled,
+    .custom-control-input[disabled],
+    .custom-control-input:disabled {
+        & ~ .custom-control-label::before {
+            background-color: $gray-3;
+            border-color: $white !important;
+        }
+    }
+}
+
+.option-chip-label.custom-control.v2 {
+    display: inline-block;
+    padding: 7px;
+
+    // These styles are for the react component since html checked attribute does not work with rerender
+    &:hover {
+        .custom-control-label {
+            border: 1px solid $black-brand;
+            border-radius: $border-radius-medium;
+            cursor: pointer;
+        }
+    }
+
+    .custom-control-input {
+        &.checked {
+            & ~ .custom-control-label {
+                border: 1px solid $black-brand;
+                border-radius: $border-radius-medium;
+            }
+        }
+    }
+
+    // Finish styles for react component
+
+    .custom-control-label {
+        @extend %body-3;
+        border: 1px solid transparent;
+        font-weight: 700 !important;
+        line-height: 14px;
+        padding: 7px;
+
+        &:after,
+        &:before {
+            content: none;
+        }
+    }
+
+    .custom-control-input {
+        &:not(:checked) {
+            &:focus {
+                & ~ .custom-control-label {
+                    border-color: $primary-blue !important;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    &:hover.custom-control-input[disabled],
+    &:hover.custom-control-input:disabled,
+    .custom-control-input[disabled],
+    .custom-control-input:disabled {
+        & ~ .custom-control-label {
+            color: $gray-4;
+            border-color: transparent;
+            cursor: not-allowed;
+        }
+    }
+}

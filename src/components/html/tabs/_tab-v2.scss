@@ -1,0 +1,100 @@
+// by new design nav items are on right side
+.business-units-nav-bar.v2 {
+    background-color: $white;
+
+    .row-wrapper-navbar-v2 {
+        border-bottom: 1px solid #dadada;
+        justify-content: space-between;
+    }
+
+    .nav-bar-text {
+        @extend %h8-standard;
+        width: 73px;
+        height: 56px;
+        color: $black-brand;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-bar-wrapper {
+        overflow-x: auto;
+
+        .nav-bar-wrapper-child {
+            border-bottom: none;
+            justify-content: flex-end !important;
+
+            @include media-breakpoint-down(sm) {
+                justify-content: flex-start !important;
+            }
+        }
+    }
+}
+
+.business-units-nav-bar.v2 {
+    // tabs active indicator differs from LNB
+    &.tabs-v2 {
+        .nav-item {
+            .nav-link {
+                &::after {
+                    bottom: -4px;
+                }
+            }
+        }
+    }
+
+    .nav-item {
+        margin: 0 0.75rem;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        .nav-link {
+            @extend %body-2;
+            color: $black-brand;
+            line-height: 22px;
+            position: relative;
+            padding: 0;
+            text-transform: none;
+
+            &.hover,
+            &:hover {
+                color: $gray-8;
+            }
+
+            &::after {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -21px;
+                z-index: 1;
+                height: 2px;
+                border: none;
+                margin: 0;
+                content: "";
+                background-color: $black-brand;
+                -webkit-transform: scaleX(0);
+                -ms-transform: scaleX(0);
+                transform: scaleX(0);
+                -webkit-transition: -webkit-transform 0.3s;
+                transition: -webkit-transform 0.3s;
+                transition: transform 0.3s;
+                transition: transform 0.3s, -webkit-transform 0.3s;
+            }
+
+            &.active:after {
+                transform: scale(1);
+            }
+
+            // mobile view
+            @include media-breakpoint-down(sm) {
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+    }
+}

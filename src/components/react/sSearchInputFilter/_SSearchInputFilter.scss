@@ -1,0 +1,51 @@
+.SSearchInputFilter {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    position: relative;
+
+    &--input {
+        &:focus {
+            outline: none;
+            border: 2px solid $primary-blue;
+        }
+
+        background-color: $gray-1;
+        border: none;
+        height: $input-field-height;
+        border-radius: $border-radius-bigger;
+        width: 100%;
+        padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+        text-indent: 0.75rem;
+        @extend %body-3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include media-breakpoint-down(md) {
+            font-size: $body1-mobile-font-size-v2;
+        }
+
+        &::placeholder {
+            @extend %body-3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            line-height: $body1-line-height;
+            @include media-breakpoint-down(md) {
+                font-size: $body1-mobile-font-size-v2;
+            }
+        }
+    }
+
+    &--btn {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateY(100%);
+        @extend .mr4;
+
+        &.pointer {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+%pseudo-stepper {
+    content: "";
+    width: 100vw;
+    position: absolute;
+}
+.SStepper {
+    justify-content: space-between;
+
+    &-wrapper {
+        width: 75%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        &-wrapper {
+            width: 100%;
+        }
+    }
+
+    .MuiStepConnector-alternativeLabel {
+        display: none;
+    }
+
+    .MuiStep-horizontal {
+        &:first-child:before {
+            @extend %pseudo-stepper;
+            top: 0;
+            right: calc(50% + 10px);
+            height: 2rem;
+            background-color: white;
+            z-index: 1;
+        }
+
+        &:last-child:before {
+            @extend %pseudo-stepper;
+            top: 1rem;
+            right: calc(50% + 20px);
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.2);
+            z-index: 0;
+        }
+    }
+
+    .MuiStepLabel {
+        &-alternativeLabel {
+            flex: 0 0 0%;
+            white-space: nowrap;
+        }
+
+        &-iconContainer {
+            border-radius: 50%;
+            border: 6px solid white;
+            z-index: 1;
+        }
+    }
+
+    .MuiStepLabel-label {
+        &.MuiStepLabel-alternativeLabel {
+            margin-top: 0;
+        }
+    }
+
+    .MuiStep-alternativeLabel {
+        flex: 0;
+    }
+
+    .MuiStepIcon-root {
+        color: $gray-6;
+        font-size: 24px !important; // should be 1.5rem when business portal also has standard rem
+
+        &.MuiStepIcon-active {
+            color: $primary-blue;
+        }
+
+        .MuiStepIcon-completed {
+            color: $black-brand;
+        }
+    }
+
+    .MuiStepLabel-label.MuiStepLabel-active {
+        font-weight: 700;
+    }
+
+    .MuiStepIcon-text {
+        font-family: $font-family-copy;
+        font-weight: 700;
+        font-size: $font-size-base-v2;
+    }
+
+    .MuiStepLabel-label {
+        font-size: $font-size-base-v2;
+        font-family: $font-family-copy;
+    }
+
+    .step-completed {
+        .MuiStepIcon-root {
+            color: $black-brand;
+        }
+    }
+
+    /** Additional Styles for mobile */
+    @media only screen and (max-width: 768px) {
+        // Make Label smaller in general
+        .MuiStepLabel {
+            &-label {
+                font-size: $font-size-sm-v2;
+            }
+        }
+        /** If there are more than 3 items use additionally mobile class  */
+        &.mobile {
+            .MuiStep-horizontal {
+                padding: 0;
+            }
+
+            .MuiStepLabel {
+                &-label {
+                    display: none;
+                }
+
+                &-active {
+                    display: block;
+                }
+            }
+        }
+    }
+}

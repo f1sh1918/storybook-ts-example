@@ -1,0 +1,26 @@
+// Style for hyperlinks version 2
+
+a.v2 {
+    background-color: transparent;
+    text-decoration: underline;
+
+    &.big {
+        @extend %body-1;
+    }
+
+    &.medium {
+        @extend %body-2;
+    }
+
+    &.small {
+        @extend %body-3;
+    }
+
+    &:hover {
+        .svg-icon {
+            &.blue {
+                fill: $blue-hyperlink-hover;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+// .npmignore files gonna be ingnored when installing npm package
+/.storybook
+/stories
+/public
+/nginx
+App.css
+App.js
+App.test.js
+basic-components.scss
+index.css
+index.js
+logo.svg
+reportWebVitals.js
+setupTests.js
+Dockerfile
+.gitignore
+.dockerignore

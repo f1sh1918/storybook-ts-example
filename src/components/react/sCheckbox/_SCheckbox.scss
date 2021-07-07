@@ -1,0 +1,96 @@
+// Style for checkboxes version 2
+.s-checkbox {
+    @extend .pl7;
+
+    .s-checkbox__control__input {
+        z-index: 1;
+        &:not(:checked) {
+            &:focus {
+                & ~ .s-checkbox__control__label:before {
+                    border-color: $primary-blue;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        &:checked {
+            & ~ .s-checkbox__control__label {
+                font-weight: 700;
+
+                &:before {
+                    background-color: $primary-blue;
+                    border-color: $primary-blue;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .s-checkbox__control__label {
+        @extend %body-2;
+        color: $black-brand;
+
+        &:before,
+        &:after {
+            background-color: transparent;
+            border-color: $gray-8;
+            border-radius: 2px;
+            box-shadow: none;
+        }
+    }
+
+    &:hover .s-checkbox__control__label {
+        color: $gray-9;
+    }
+
+    .s-checkbox__control__input[disabled],
+    .s-checkbox__control__input:disabled {
+        & ~ .s-checkbox__control__label {
+            color: $gray-3;
+
+            &:before {
+                background-color: transparent;
+                border-color: $gray-3;
+            }
+        }
+
+        &:checked {
+            & ~ .s-checkbox__control__label {
+                font-weight: 700;
+
+                &:before {
+                    background-color: $gray-3;
+                    border-color: $gray-3;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+// case of wrapping component being disabled
+.v2.disabled,
+.v2 .disabled {
+    .s-checkbox__control__input {
+        & ~ .s-checkbox__control__label {
+            color: $gray-3;
+
+            &:before {
+                background-color: transparent;
+                border-color: $gray-3;
+            }
+        }
+
+        &:checked {
+            & ~ .s-checkbox__control__label {
+                font-weight: 700;
+
+                &:before {
+                    background-color: $gray-3;
+                    border-color: $gray-3;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

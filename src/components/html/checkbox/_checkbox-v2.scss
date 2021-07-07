@@ -1,0 +1,99 @@
+// Style for checkboxes version 2
+.v2 .custom-checkbox,
+.custom-checkbox.v2 {
+    padding-left: 27px;
+
+    .custom-control-input {
+        &:not(:checked) {
+            &:focus {
+                & ~ .custom-control-label:before {
+                    border-color: $primary-blue !important;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        &:checked {
+            & ~ .custom-control-label {
+                font-weight: 700 !important;
+
+                &:before {
+                    background-color: $primary-blue !important;
+                    border-color: $primary-blue !important;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .custom-control-label {
+        @extend %body-2;
+        color: $black-brand;
+
+        &:before,
+        &:after {
+            background-color: transparent;
+            border-color: $gray-8;
+            border-radius: 2px;
+            box-shadow: none;
+            left: -27px;
+            top: 9px;
+            transform: translate3d(0, -50%, 0);
+        }
+    }
+
+    &:hover .custom-control-label {
+        color: $gray-9;
+    }
+
+    .custom-control-input[disabled],
+    .custom-control-input:disabled {
+        & ~ .custom-control-label {
+            color: $gray-3;
+
+            &:before {
+                background-color: transparent;
+                border-color: $gray-3;
+            }
+        }
+
+        &:checked {
+            & ~ .custom-control-label {
+                font-weight: 700 !important;
+
+                &:before {
+                    background-color: $gray-3 !important;
+                    border-color: $gray-3 !important;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}
+
+// case of wrapping component being disabled
+.v2.disabled,
+.v2 .disabled {
+    .custom-control-input {
+        & ~ .custom-control-label {
+            color: $gray-3;
+
+            &:before {
+                background-color: transparent;
+                border-color: $gray-3;
+            }
+        }
+
+        &:checked {
+            & ~ .custom-control-label {
+                font-weight: 700 !important;
+
+                &:before {
+                    background-color: $gray-3 !important;
+                    border-color: $gray-3 !important;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

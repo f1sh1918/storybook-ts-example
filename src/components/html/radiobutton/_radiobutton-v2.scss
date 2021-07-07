@@ -1,0 +1,71 @@
+// Style for radiobutton version 2
+.custom-radio.v2 {
+    padding-left: 27px;
+
+    .custom-control-input {
+        &:not(:checked) {
+            &:focus {
+                & ~ .custom-control-label:before {
+                    border-color: $primary-blue !important;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        &:checked {
+            & ~ .custom-control-label {
+                font-weight: 700 !important;
+
+                &:before {
+                    background-color: $primary-blue !important;
+                    border-color: $primary-blue !important;
+                    box-shadow: none;
+                }
+
+                &:after {
+                    background-image: none !important;
+                    border: 2px solid white;
+                    border-radius: 20px;
+                    height: 14px;
+                    width: 14px;
+                    top: 9px;
+                    left: -26px;
+                }
+            }
+        }
+    }
+
+    .custom-control-label {
+        @extend %body-2;
+        color: $black-brand;
+
+        &:before,
+        &:after {
+            border-color: $gray-8;
+            box-shadow: none;
+            left: -27px;
+            top: 9px;
+            transform: translate3d(0, -50%, 0);
+        }
+    }
+
+    .custom-control-input[disabled],
+    .custom-control-input:disabled {
+        & ~ .custom-control-label::before {
+            background-color: transparent;
+            border-color: $gray-3;
+        }
+
+        &:checked {
+            & ~ .custom-control-label {
+                font-weight: 700 !important;
+
+                &:before {
+                    background-color: $gray-3 !important;
+                    border-color: $gray-3 !important;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

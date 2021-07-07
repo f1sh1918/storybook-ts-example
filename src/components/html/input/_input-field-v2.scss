@@ -1,0 +1,112 @@
+// Style for input (text, password,number...) field v2
+.input-field.v2 {
+    .MuiTextField-root {
+        width: 100%;
+    }
+
+    // placeholder
+    label,
+    .MuiInputLabel-animated {
+        @extend %body-1;
+        color: $gray-6;
+
+        //when it is up
+        &.MuiInputLabel-shrink {
+            font-size: 14px;
+            transform: translate(0, 0) scale(1);
+        }
+
+        &.Mui-disabled {
+            color: $gray-3;
+        }
+
+        &.Mui-focused {
+            color: $primary-blue;
+        }
+
+        &.Mui-error {
+            color: $red-secondary;
+        }
+    }
+
+    // underline
+    div,
+    .MuiInput-underline {
+        margin-top: 18px;
+
+        &:before {
+            border-color: $gray-6;
+        }
+
+        &:hover:not(.Mui-disabled):before,
+        &:after {
+            border-color: $primary-blue;
+        }
+
+        &.Mui-disabled:before,
+        &.disabled:before {
+            border-color: $gray-3;
+            border-bottom-style: solid;
+        }
+
+        &.Mui-error:before,
+        &.Mui-error:after {
+            border-color: $red-secondary;
+        }
+    }
+
+    // hint message
+    p,
+    .MuiFormHelperText-root {
+        @extend %body-3;
+        color: $gray-6;
+
+        &.Mui-disabled,
+        &.disabled {
+            color: $gray-3;
+        }
+
+        &.Mui-error {
+            color: $red-secondary;
+        }
+    }
+
+    // input
+    input,
+    .MuiInputBase-input {
+        @extend %body-1;
+        color: $black-brand;
+
+        &.Mui-disabled,
+        &.disabled {
+            color: $gray-3;
+        }
+    }
+}
+
+// mobile view
+.input-field.v2 {
+    @media (max-width: 768px) {
+        // placeholder
+        label,
+        .MuiInputLabel-animated {
+            font-size: 14px;
+
+            &.MuiInputLabel-shrink {
+                font-size: 12px;
+            }
+        }
+
+        // input
+        input,
+        .MuiInputBase-input {
+            font-size: 14px;
+        }
+
+        // hint message
+        p,
+        .MuiFormHelperText-root {
+            font-size: 10px;
+        }
+    }
+}

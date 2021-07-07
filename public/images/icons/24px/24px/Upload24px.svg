@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <path id="upload24px-a" d="M18.749875,20.725 L18.749875,22.025 L5.260125,22.025 L5.260125,20.725 L18.749875,20.725 Z M11.994875,1.68820574 L19.2076992,9.17399382 L18.2715508,10.0760062 L12.6550508,4.24820574 L12.655125,19.375 L11.355125,19.375 L11.3550508,4.22320574 L5.71819917,10.0760062 L4.78205083,9.17399382 L11.994875,1.68820574 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="upload24px-b" fill="#fff">
+      <use xlink:href="#upload24px-a"/>
+    </mask>
+    <use fill="#000" fill-rule="nonzero" xlink:href="#upload24px-a"/>
+    <g fill="#000" mask="url(#upload24px-b)">
+      <rect width="24" height="24"/>
+    </g>
+  </g>
+</svg>

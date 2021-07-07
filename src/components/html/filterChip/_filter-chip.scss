@@ -1,0 +1,28 @@
+// Style for filter chip and removable icon version 2
+
+.filter-chip {
+    @extend %body-3;
+    font-weight: normal;
+    color: $black-brand;
+    background: $background-scrim-3;
+    border-radius: $border-radius-medium;
+    border: none;
+    padding: 0.5rem 1rem;
+    &:focus {
+        outline: none;
+    }
+    &.hover,
+    &:hover {
+        cursor: pointer;
+        background: $background-scrim-4;
+    }
+    &.icon-after svg {
+        margin-left: 0.5rem;
+    }
+    &.mobile {
+        font-size: $font-size-xs-v2;
+    }
+    @include media-breakpoint-down(sm) {
+        font-size: $font-size-xs-v2;
+    }
+}

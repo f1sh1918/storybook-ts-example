@@ -1,0 +1,162 @@
+$slideTransitionInactive: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, opacity 0.1s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+    -webkit-transform 0.1s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+$slideTransitionActive: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s,
+    -webkit-transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+$slideDownTransition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+    -webkit-max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.1s;
+$fadeTransition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+$slideXTransition: transform 300ms cubic-bezier(0.6, 0, 0.4, 1) 0ms, opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+    -webkit-transform 0s cubic-bezier(0.6, 0, 0.4, 1);
+$productCategoryWidth: 330px;
+
+@import "./components/desktop/sNav";
+@import "./components/mobile/sNav";
+
+.sNav {
+    font-size: $font-size-base-v2;
+    font-weight: 700;
+    border-bottom: none;
+    background: $white;
+
+    .nav-content {
+        position: static;
+    }
+
+    &__cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $background-scrim-1;
+        opacity: 0;
+        transition: opacity 0.4s linear;
+        pointer-events: none;
+        &.active {
+            opacity: 1;
+            transition: opacity 0.4s linear;
+        }
+    }
+    &__wrapper {
+        background: $white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+        &.leveled {
+            z-index: -1;
+        }
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+
+    .slide {
+        opacity: 0;
+        &-appear {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: $slideTransitionInactive;
+
+            &-active {
+                opacity: 1;
+                transform: translateX(0);
+                transition: $slideTransitionActive;
+            }
+        }
+        &-enter {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: $slideTransitionInactive;
+            &-active {
+                opacity: 1;
+                transform: translateX(0);
+                transition: $slideTransitionActive;
+            }
+        }
+        &-exit {
+            display: none;
+        }
+    }
+    .slide-down {
+        &-enter {
+            opacity: 0;
+            max-height: 0;
+            transition: $slideDownTransition;
+            &-active {
+                opacity: 1;
+                max-height: 1000px;
+                transition: $slideDownTransition;
+            }
+        }
+        &-exit {
+            opacity: 1;
+            max-height: 1000px;
+            transition: $slideDownTransition;
+            &-active {
+                opacity: 0;
+                max-height: 0;
+                transition: $slideDownTransition;
+            }
+        }
+    }
+    .slide-left {
+        &-enter {
+            opacity: 0;
+            transform: translate(-10rem, 0);
+            transition: $slideXTransition;
+            &-active {
+                opacity: 1;
+                transform: translate(0, 0);
+                transition: $slideXTransition;
+            }
+        }
+        &-exit {
+            opacity: 1;
+            transform: translate(0, 0);
+            transition: $slideXTransition;
+            &-active {
+                opacity: 0;
+                transform: translate(-10rem, 0);
+                transition: $slideXTransition;
+            }
+        }
+    }
+    .slide-right {
+        &-enter {
+            opacity: 0;
+            transform: translate(10rem, 0);
+            transition: $slideXTransition;
+            &-active {
+                opacity: 1;
+                transform: translate(0, 0);
+                transition: $slideXTransition;
+            }
+        }
+        &-exit {
+            opacity: 1;
+            transform: translate(0, 0);
+            transition: $slideXTransition;
+            &-active {
+                opacity: 0;
+                transform: translate(10rem, 0);
+                transition: $slideXTransition;
+            }
+        }
+    }
+
+    .fade {
+        &-appear {
+            opacity: 0;
+            transition: $fadeTransition;
+
+            &-active {
+                opacity: 1;
+                transition: $fadeTransition;
+            }
+        }
+    }
+}

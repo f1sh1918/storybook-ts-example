@@ -1,0 +1,52 @@
+/* Customize the label (the container) */
+
+.SColorChip {
+    /* Hide the browser's default radio button */
+    input {
+        position: absolute;
+        opacity: 0;
+        height: 0;
+        width: 0;
+
+        /* Show the circle when checked & checked class was set*/
+        &.checked ~ .SColorChip-checkmark:after,
+        &:checked ~ .SColorChip-checkmark:after {
+            display: block;
+        }
+    }
+
+    /* Create a custom radio button */
+    &-checkmark {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        height: 1.5rem;
+        width: 1.5rem;
+        border: 3px solid white;
+        border-radius: $border-radius-big;
+
+        &.disabled {
+            cursor: not-allowed;
+        }
+
+        /* Create the black circle */
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: -4.5px;
+            left: -4.5px;
+            width: 1.7rem;
+            height: 1.7rem;
+            border: 2px solid black;
+            border-radius: $border-radius-big;
+            background: transparent;
+        }
+    }
+
+    /* On mouse-over, add the circle */
+    &:hover input:not(:disabled) ~ .SColorChip-checkmark:after {
+        display: block;
+    }
+}

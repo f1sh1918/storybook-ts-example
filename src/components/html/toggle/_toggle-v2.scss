@@ -1,0 +1,76 @@
+// Style for toggle switch version 2
+.custom-toggle.v2 {
+    .toggle {
+        position: relative;
+        display: inline-block;
+        width: 42px;
+        height: 16px;
+        border: 1px solid $gray-5;
+        background-color: $white;
+        border-radius: 20px;
+        left: -27px;
+        margin: 4px 0 0 3px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 1px solid $gray-5;
+            background-color: $white;
+            top: -5px;
+            left: -1px;
+            transition: all 0.3s;
+        }
+    }
+
+    .checkbox:checked {
+        & + .toggle {
+            background-color: $primary-blue;
+            border-color: $primary-blue;
+
+            &:after {
+                left: 17px;
+                border-color: $primary-blue;
+            }
+        }
+
+        & ~ .custom-control-label {
+            font-weight: 700;
+        }
+    }
+
+    .custom-control-label {
+        @extend %body-2;
+        left: -16px;
+        padding-top: 3px;
+    }
+
+    .checkbox[disabled],
+    .checkbox:disabled {
+        + .toggle {
+            border-color: $gray-3;
+
+            &:after {
+                border-color: $gray-3;
+            }
+        }
+
+        &:checked + .toggle {
+            background-color: $gray-3;
+        }
+    }
+
+    // hiding original checkbox
+    .checkbox {
+        display: none;
+    }
+
+    .custom-control-label {
+        &:before,
+        &:after {
+            content: none;
+        }
+    }
+}

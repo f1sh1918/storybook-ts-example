@@ -1,0 +1,61 @@
+// Style for dropdown menu- one which keeps selected value
+.dropdown-select.v2 {
+    .MuiInput-input {
+        @extend %body-2;
+        font-weight: 700;
+        line-height: 17px;
+
+        &:focus {
+            background-color: transparent;
+        }
+    }
+
+    input {
+        border: none;
+    }
+
+    &.MuiInput-underline:after,
+    &.MuiInput-underline:before {
+        content: none;
+    }
+}
+
+.MuiPopover-paper {
+    box-shadow: $box-shadow-2 !important;
+    margin-top: 84px;
+    min-width: 310px !important;
+
+    li {
+        @extend %body-2;
+        line-height: 17px;
+        color: $black-brand;
+        padding: 12px 24px 11px;
+
+        &.Mui-selected {
+            font-weight: 700;
+            background-color: transparent;
+            position: relative;
+
+            &:hover {
+                background-color: $gray-1;
+            }
+
+            &:after {
+                content: "\f00c"; // icon check
+                font-family: $font-family-icons;
+                position: absolute;
+                font-size: 16px;
+                right: 24px;
+            }
+        }
+
+        &:hover {
+            color: $gray-9;
+            background-color: $gray-1;
+        }
+
+        .MuiTouchRipple-root {
+            display: none;
+        }
+    }
+}

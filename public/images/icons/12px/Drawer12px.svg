@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+  <defs>
+    <path id="drawer12px-a" d="M10.250025,8.5 L10.250025,9.5 L1.750025,9.5 L1.750025,8.5 L10.250025,8.5 Z M10.250025,5.5 L10.250025,6.5 L1.750025,6.5 L1.750025,5.5 L10.250025,5.5 Z M10.250025,2.5 L10.250025,3.5 L1.750025,3.5 L1.750025,2.5 L10.250025,2.5 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="drawer12px-b" fill="#fff">
+      <use xlink:href="#drawer12px-a"/>
+    </mask>
+    <use fill="#000" fill-rule="nonzero" xlink:href="#drawer12px-a"/>
+    <g fill="#000" mask="url(#drawer12px-b)">
+      <rect width="12" height="12"/>
+    </g>
+  </g>
+</svg>

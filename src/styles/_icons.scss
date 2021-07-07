@@ -1,0 +1,40 @@
+@mixin setIconSize($prop) {
+    height: $prop;
+    width: $prop;
+}
+
+.svg-icon {
+    // Sizes
+    &.small {
+        @include setIconSize(12px);
+    }
+
+    &.medium {
+        @include setIconSize(16px);
+    }
+
+    &.large {
+        @include setIconSize(24px);
+    }
+
+    // Icon Colors
+    &.gray-6 {
+        fill: $gray-6;
+    }
+
+    &.gray-8 {
+        fill: $gray-8;
+    }
+
+    &.black {
+        fill: $black-brand;
+    }
+
+    &.white {
+        fill: $white;
+    }
+
+    &.blue {
+        fill: $blue-hyperlink;
+    }
+}

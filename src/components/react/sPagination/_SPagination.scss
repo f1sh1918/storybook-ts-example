@@ -1,0 +1,139 @@
+.SPagination {
+
+    &.p-paginator-bottom {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: 2rem 1.5rem;
+        @include media-breakpoint-down(md) {
+            flex-wrap: wrap;
+            padding: 0 1rem 1rem 1rem;
+        }
+
+    }
+
+    .p-paginator {
+
+        &-pages {
+            margin-bottom: 2px;
+        }
+
+        &-prev, &-next {
+            > span::before {
+                font-size: $sub-h2-mobile-font-size-v2;
+            }
+        }
+
+        &-first, &-last {
+            > span::before {
+                font-size: $sub-h4-font-size-v2;
+            }
+        }
+
+        .p-paginator-element {
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &-page {
+            &.p-paginator-element {
+                @extend .py0;
+                @extend .px1;
+                @extend .my0;
+                @extend .mx1;
+                @extend %body-2;
+
+                &.p-highlight {
+                    font-weight: bold;
+                    border-bottom: 2px solid $black-brand;
+
+                }
+
+                &:hover {
+                    border-bottom: 1px solid $black-brand;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+
+        .p-dropdown {
+            width: auto;
+        }
+
+    }
+
+
+    .p-rows-per-page {
+        @include media-breakpoint-down(md) {
+            order: -1;
+            width: 50%;
+            margin-bottom: 1rem;
+
+        }
+        display: flex;
+        @extend .pl4;
+        justify-content: flex-end;
+
+        &-label {
+            @extend %body-2;
+            font-weight: bold;
+            align-self: center;
+        }
+
+        &-dropdown {
+            background-color: transparent;
+            align-self: center;
+            @extend %body-2;
+            @extend .ml0;
+            @extend .py3;
+            @extend .px0;
+            justify-content: flex-end;
+            width: auto;
+
+            .p-dropdown-label {
+                @extend %body-2;
+                font-weight: bold;
+                text-indent: 0.25rem;
+                align-self: center;
+
+                @include media-breakpoint-down(md) {
+                    flex: none;
+                    width: auto;
+                }
+            }
+
+            .p-dropdown-trigger-icon {
+                text-indent: 0;
+
+                &:before {
+                    color: $black-brand;
+                }
+            }
+        }
+    }
+
+    .p-paginator-current {
+        @include media-breakpoint-down(md) {
+            order: -2;
+            width: 50%;
+            justify-content: flex-start;
+            margin-bottom: 1rem;
+        }
+        @extend %body-3;
+        margin-left: auto;
+        cursor: text;
+    }
+}
+
+
+.p-dropdown-panel {
+    .p-dropdown-items-wrapper {
+        .p-dropdown-item {
+            text-align: center;
+        }
+    }
+}

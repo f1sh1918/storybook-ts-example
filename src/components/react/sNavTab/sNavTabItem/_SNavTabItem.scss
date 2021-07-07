@@ -1,0 +1,41 @@
+.s-navtab {
+    &-item {
+        &:not(:first-of-type) {
+            @extend .mx6;
+        }
+
+        &:first-of-type {
+            @extend .mr6;
+        }
+
+        &__link {
+            color: $black-brand;
+
+            position: relative;
+            @extend .py1;
+
+            &:hover {
+                color: $gray-8;
+                text-decoration: none;
+            }
+
+            &.active {
+                font-weight: bold;
+                color: $black-brand;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $black-brand;
+                }
+            }
+
+
+        }
+    }
+
+}

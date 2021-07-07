@@ -1,0 +1,98 @@
+{
+    "name": "storybook-example",
+    "version": "0.0.1",
+    "private": true,
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "source": "lib/index.ts",
+    "files": [
+        "lib",
+        "public",
+        "src"
+    ],
+    "scripts": {
+        "start": "start-storybook -p 6006 -s public",
+        "build": "npm-install-peers && build-storybook -s public",
+        "link": "npm run prepare && npm link",
+        "prepare": "rollup -c",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "storybook": "npm-install-peers && start-storybook -p 6006 -s public",
+        "build-storybook": "npm-install-peers && build-storybook -s public",
+        "pretty": "prettier --write \"./src/**/*.{js,jsx,json,ts,tsx,css,scss}\"",
+        "install-peers": "npm-install-peers"
+    },
+    "dependencies": {
+        "@material-ui/core": "^4.11.2",
+        "@types/classnames": "^2.3.1",
+        "moment": "^2.29.1",
+        "prettier": "^2.2.1",
+        "primereact": "~6.3.0",
+        "react-countdown": "^2.3.1",
+        "react-scripts": "4.0.1",
+        "react-toastify": "^7.0.3",
+        "web-vitals": "^0.2.4"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.13.0",
+        "@babel/core": "^7.13.8",
+        "@babel/preset-env": "^7.13.9",
+        "@babel/preset-react": "^7.12.13",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-typescript": "^8.2.0",
+        "@storybook/addon-actions": "^6.2.7",
+        "@storybook/addon-essentials": "^6.2.7",
+        "@storybook/addon-links": "^6.2.7",
+        "@storybook/node-logger": "^6.2.7",
+        "@storybook/preset-create-react-app": "^3.1.7",
+        "@storybook/react": "^6.2.7",
+        "@testing-library/jest-dom": "^5.11.6",
+        "@testing-library/react": "^11.2.2",
+        "@testing-library/user-event": "^12.6.0",
+        "@types/jest": "^26.0.15",
+        "@types/moment": "^2.13.0",
+        "@types/node": "^12.0.0",
+        "@types/react": "^17.0.3",
+        "@types/react-dom": "^17.0.2",
+        "@types/react-toastify": "^4.1.0",
+        "@types/tinycolor2": "^1.4.2",
+        "copyfiles": "^2.4.1",
+        "npm-install-peers": "^1.2.2",
+        "npm-run-all": "^4.1.5",
+        "react-bootstrap": "^1.5.2",
+        "rollup": "^2.40.0",
+        "rollup-plugin-commonjs": "^10.1.0",
+        "rollup-plugin-delete": "^2.0.0",
+        "rollup-plugin-multi-input": "^1.2.0",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-typescript2": "^0.30.0",
+        "tslib": "^2.2.0",
+        "typescript": "^3.9.9"
+    },
+    "peerDependencies": {
+        "axios": "^0.21.1",
+        "classnames": "^2.2.6",
+        "tinycolor2": "^1.4.2",
+        "node-sass": "^4.14.1",
+        "bootstrap": "^4.5.0",
+        "prop-types": "^15.7.2",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-bootstrap": "~1.5.2",
+        "primeicons": "^4.1.0",
+        "react-transition-group": "^4.4.1"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

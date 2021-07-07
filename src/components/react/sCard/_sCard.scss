@@ -1,0 +1,35 @@
+﻿.s-card {
+    border: none;
+
+    &__header {
+        border-bottom: none;
+
+        &.round {
+            border-top-left-radius: $border-radius-big;
+            border-top-right-radius: $border-radius-big;
+        }
+    }
+
+    &__divider {
+        background-color: $gray-3;
+
+        &__wrapper {
+            @extend .px6;
+            background-color: $gray-1;
+        }
+    }
+
+    &__body {
+        background-color: $gray-1;
+
+        &.round {
+            border-bottom-left-radius: $border-radius-big;
+            border-bottom-right-radius: $border-radius-big;
+
+        }
+
+        &.round-full {
+            border-radius: $border-radius-big;
+        }
+    }
+}
